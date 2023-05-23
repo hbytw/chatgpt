@@ -153,7 +153,7 @@ function send(reqUrl, body, onMessage, scussionCall) {
     console.error(data);
     loader.hidden = true
     if (!data) {
-      addItem("system", `Unable to access OpenAI, please check your network.`)
+      addItem("system", `无法访问OpenAI，请检查您的网络.`)
     } else {
       try {
         let openai = JSON.parse(data)
@@ -334,9 +334,9 @@ function showSettings(ok = true) {
 }
 
 function setSettingInput(config) {
-  domainInput.placeholder = "https://api.openai.com"
+  domainInput.placeholder = "https://www.ytwos.com"
   maxTokensInput.placeholder = config.maxTokens
-  systemPromptInput.placeholder = "You are a helpful assistant."
+  systemPromptInput.placeholder = "你是个乐于助人的助手."
   temperatureInput.placeholder = config.temperature
 
   apiKeyInput.value = config.apiKey
@@ -385,7 +385,7 @@ var config = {
 }
 function saveSettings() {
   if (!apiKeyInput.value) {
-    alert('OpenAI API key can not empty')
+    alert('API密钥不能为空')
     return
   }
   config.domain = domainInput.value || domainInput.placeholder
